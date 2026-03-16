@@ -101,11 +101,3 @@ interface CleanResponse {
 #### 6. 安全设计 (Security Note)
 *   **注入检测：** 在处理过程中，会自动扫描是否存在 `<meta>` 劫持或带有隐藏恶意指令的文本节点。
 *   **离线处理：** 该 Skill 设计为在本地执行（不调用外网模型），确保在将数据发给云端 LLM 之前，脱敏工作已经完成。
-
----
-
-### 下一步行动建议：
-
-1.  **开发工具：** 建议使用 **BeautifulSoup4 (Python)** 或 **Cheerio (Node.js)** 配合 Playwright 的 `accessibility tree` API 进行实现。
-2.  **集成测试：** 建立一个包含 100 个主流网站（Google, Amazon, Facebook 等）的测试库，验证压缩后的语义一致性。
-3.  **开源发布：** 编写详细的 `README`，展示压缩前后的 Token 消耗对比图表，这将是该仓库最好的广告。
